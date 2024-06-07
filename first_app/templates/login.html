@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block body %} 
+
+<form method="post" novalidate>
+    <h1 class="mb-4">Login Page</h1>
+    {% csrf_token %}
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-{{msg.tags}}" role="alert">{{msg}}</div>
+        {% endfor %}
+    {% endif %}
+    {{form | crispy }}
+    <button class="btn btn-warning mt-2 mb-4">Login</button>
+    <h6>New here <a href="{% url 'signup' %}">Signup</a></h6>
+</form>
+{% endblock %}

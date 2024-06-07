@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block body %}
+<div>
+    <h1>Home page</h1>
+    <h1>{{my_argument}}</h1>
+    <h3 class="my-4">Practice Day 1</h3>
+    <ul>        
+        <li>Make an authentication system by your own where</li>
+        <li>Add a bootstrap navbar where there will be Sign Up and Login for unauthenticated users and Profile and Logout for authenticated users</li>
+        <li>A user can create an account</li>
+        <li>Can login to his account and after login redirect the user to his/her profile and show message “Logged In Successfully”</li>
+        <li>Can logout and after logout showed the message in the home page “Logged Out Successfully”</li>
+        <li>An authenticated user can only change his password with and without previous password</li>
+        <li>NB: At first try it by yourself without using the module code</li>
+    </ul>
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-{{msg.tags}}" role="alert">{{msg}}</div>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
